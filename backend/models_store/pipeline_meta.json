@@ -1,0 +1,66 @@
+{
+  "last_trained": "2026-03-13T16:58:48.501166",
+  "last_scored": "2026-03-13T16:58:48.998015",
+  "model_metrics": {
+    "n_samples": 52,
+    "n_features": 31,
+    "label_distribution": {
+      "Amber": 24,
+      "Red": 17,
+      "Green": 11
+    },
+    "cv_f1_mean": 0.5524,
+    "cv_f1_scores": [
+      0.7133,
+      0.51,
+      0.8,
+      0.6,
+      0.1385
+    ],
+    "top_features": [
+      [
+        "max_debt_group",
+        0.1136
+      ],
+      [
+        "avg_debt_group",
+        0.0781
+      ],
+      [
+        "cic_bad_debt_bn",
+        0.0728
+      ],
+      [
+        "cic_debt_group",
+        0.0684
+      ],
+      [
+        "total_outstanding_bn",
+        0.0558
+      ],
+      [
+        "total_invoice_amount_bn",
+        0.0495
+      ],
+      [
+        "num_credit_institutions",
+        0.0493
+      ],
+      [
+        "round_txn_ratio",
+        0.0398
+      ],
+      [
+        "txn_velocity",
+        0.0396
+      ],
+      [
+        "customer_age_days",
+        0.0379
+      ]
+    ],
+    "anomaly_contamination": 0.15,
+    "n_estimators_rf": 200,
+    "n_estimators_if": 100
+  }
+}
