@@ -1,0 +1,31 @@
+version: '3.8'
+services:
+  backend:
+    build: ./backend
+    container_name: audit_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data          # persist SQLite DB
+      - ./models_store:/app/models_store  # persist ML models
+    environment:
+      - DB_PATH=/app/data/audit_system.db
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  frontend:
+    build: ./frontend
+    container_name: audit_frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+networks:
+  default:
+    name: audit_network
