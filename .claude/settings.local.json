@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s http://localhost:8000/health)",
+      "Bash(curl -s http://localhost:8000/api/dashboard/kpis)",
+      "Bash(curl -s \"http://localhost:8000/api/dashboard/top-red-flags\")",
+      "Bash(./venv/Scripts/python.exe -c \":*)"
+    ]
+  }
+}
